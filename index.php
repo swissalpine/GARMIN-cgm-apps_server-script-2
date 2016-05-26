@@ -37,15 +37,15 @@
             $_richtung = $_daten[$i]->{'direction'};
 
 	    // Nummerierung der Pfeile, um Pfeilausgabe am Garmin vorzubereiten
-	    if ($_richtung == "") { $_pfeil = 0; } 
 	    if ($_richtung == "DoubleUp") {$_pfeil = 7; }
-	    if ($_richtung == "SingleUp") {$_pfeil = 6; }
-	    if ($_richtung == "FortyFiveUp") {$_pfeil = 5; }
-	    if ($_richtung == "Flat") {$_pfeil = 4; }
-	    if ($_richtung == "FortyFiveDown") {$_pfeil = 3; }
-	    if ($_richtung == "SingleDown") {$_pfeil = 2; }
-	    if ($_richtung == "DoubleDown") {$_pfeil = 1; }
-
+	    else if ($_richtung == "SingleUp") {$_pfeil = 6; }
+	    else if ($_richtung == "FortyFiveUp") {$_pfeil = 5; }
+            else if ($_richtung == "Flat") {$_pfeil = 4; }
+	    else if ($_richtung == "FortyFiveDown") {$_pfeil = 3; }
+	    else if ($_richtung == "SingleDown") {$_pfeil = 2; }
+	    else if ($_richtung == "DoubleDown") {$_pfeil = 1; }
+            else { $_pfeil = 0; }
+            
             $_ausgabe .= '{"blutzucker":"'.$_blutzucker.'", "differenzMinuten":'.$_minuten.', "verzoegerung":"'.$_minutenverz.'", "pfeil":"'.$_pfeil.'"},';
             
         }     
