@@ -3,9 +3,9 @@
     // Andreas May, Hamburg, www.laufen-mit-diabetes.de
 	
 	// Mongolab-URL mit der übertragenen Api ergänzen
-    $_datenbank = $_GET[database];
+    $_datenbank = trim($_GET[database]);
     if($_datenbank == "") { $_datenbank = "nightscout"; }
-    $_url = "https://api.mongolab.com/api/1/databases/".$_datenbank."/collections/entries?l=26&s={%27date%27:-1}&f={%27_id%27:0,%20%27direction%27:1,%20%27sgv%27:1,%27date%27:1}&apiKey=".$_GET["api"];
+    $_url = "https://api.mongolab.com/api/1/databases/".$_datenbank."/collections/entries?l=26&s={%27date%27:-1}&f={%27_id%27:0,%20%27direction%27:1,%20%27sgv%27:1,%27date%27:1}&apiKey=".trim($_GET["api"]);
  
     $_lang = $_GET["sprache"];
     
